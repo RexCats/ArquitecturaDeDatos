@@ -1,4 +1,4 @@
-#!/home/jose/Documentos/GitHub/ArquitecturaDeDatos/venv/bin/python3
+#!/home/eljosevier/Documentos/GitHub/ArquitecturaDeDatos/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
