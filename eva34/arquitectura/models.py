@@ -1,5 +1,6 @@
 # Create your models here.
 from django.db import models
+from datetime import date
 
 class raw_data(models.Model):
     id = models.AutoField(primary_key=True)
@@ -7,5 +8,13 @@ class raw_data(models.Model):
     apellido = models.CharField(max_length=100)
     edad = models.DateField()
 
-    def nombre_completo_edad(self):
-        return f'{self.nombre} {self.apellido} {self.edad} años'
+    def calculate_age(self):
+        today = date.today()
+        return today.year - self.edad.year - ((today.month, today.day) < (self.edad.month, self.edad.day))
+
+class persona_model(models.Model):
+    id = models.AutoField(primary_key=True)
+    nombre_completo = models.CharField(max_length=100)
+    edad_nominal = models.IntegerField()
+
+

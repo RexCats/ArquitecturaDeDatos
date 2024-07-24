@@ -16,10 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from arquitectura.views import Personas, Personas_lista
+from arquitectura.views import ETLView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('personas/', Personas.as_view()),
-    path('personas/<int:pk>/', Personas_lista.as_view()),
+    path('etl/', ETLView.as_view(), name='etl')
 ]
